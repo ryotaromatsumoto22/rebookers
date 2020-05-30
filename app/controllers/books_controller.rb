@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-    before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :authenticate_user!
 
   def index
     @book = Book.new
@@ -12,6 +12,7 @@ class BooksController < ApplicationController
     @book = Book.new
     @user = @book_d.user
     @books = @user.books.all
+    @post_comment = PostComment.new
   end
 
   def edit

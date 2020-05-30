@@ -9,85 +9,80 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <nav class="nav navbar-nav navbar-left">
-          <span>Bookers</span>
-        </nav>
-        <nav>
-          <% if user_signed_in? %>
-            <div class="row">
-              <ul class="nav navbar-nav navbar-right">
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav class="nav navbar-nav navbar-left">
+        <span>Bookers</span>
+      </nav>
+      <nav>
+        <% if user_signed_in? %>
+          <div class="row">
+            <ul class="nav navbar-nav navbar-right">
 
-                  <li>
-                    <%= link_to user_path(current_user.id) do %>
-                      <div class="glyphicon glyphicon-home home">Home</div>
-                      <% end %>
-                  </li>
-
-                  <li>
-                    <%= link_to users_path do %>
-                      <div class="glyphicon glyphicon-user users">Users</div>
-                    <% end %>
-                  </li>
-
-                  <li>
-                    <%= link_to books_path do %>
-                      <div class="glyphicon glyphicon-book books">Books</div>
-                     <% end %>
-                  </li>
-
-                  <li>
-                    <%= link_to destroy_user_session_path,　method: :delete do %>
-                      <div class="glyphicon glyphicon-edit sign_up">logout</div>
-                    <% end %>
-                  </li>
-
-              </ul>
-            </div>
-
-            <% else %>
-
-              <div class="row">
-                <ul class="nav navbar navbar-right">
-
-                    <li>
-                      <%= link_to root_path do %>
-                        <div class="glyphicon glyphicon-home home">Home</div>
-                      <% end %>
-                    </li>
-
-
-                    <li>
-                      <%= link_to about_path do %>
-                        <div class="glyphicon glyphicon-link about">About</div>
-                      <% end %>
-                    </li>
-
-
-                    <li>
-                      <%= link_to new_user_registration_path do %>
-                        <div class="glyphicon glyphicon-edit sign_up">sign up</div>
-                      <% end %>
-                    </li>
-
-
-                    <li>
-                      <%= link_to user_session_path do %>
-                        <div class="glyphicon glyphicon-log-in sign_in"> login</div>
-                      <% end %>
-                    </li>
-
-                </ul>
-              </div>
-            <% end %>
+              <li>
+                <%= link_to user_path(current_user.id) do %>
+                  <div class="glyphicon glyphicon-home home">Home</div>
+                  <% end %>
+              </li>
+              <li>
+                <%= link_to users_path do %>
+                  <div class="glyphicon glyphicon-user users">Users</div>
+                 <% end %>
+              </li>
+              <li>
+                <%= link_to books_path do %>
+                  <div class="glyphicon glyphicon-book books">Books</div>
+                 <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path,　method: :delete do %>
+                  <div class="glyphicon glyphicon-edit sign_up">logout</div>
+                <% end %>
+              </li>
+            </ul>
           </div>
-        </nav>
-      </div>
-    </header>
 
-    <%= yield %>
+          <% else %>
+
+            <div class="row">
+              <ul class="nav navbar navbar-right">
+                <li>
+                  <%= link_to root_path do %>
+                    <div class="glyphicon glyphicon-home home">Home</div>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to about_path do %>
+                    <div class="glyphicon glyphicon-link about">About</div>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to new_user_registration_path do %>
+                    <div class="glyphicon glyphicon-edit sign_up">sign up</div>
+                  <% end %>
+                </li>
+
+                <li>
+                  <%= link_to user_session_path do %>
+                    <div class="glyphicon glyphicon-log-in sign_in"> login</div>
+                  <% end %>
+                </li>
+
+               </ul>
+            </div>
+          <% end %>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+    <body>
+
+      <%= yield %>
+
+    </body>
 
     <footer>
         <div class="container">
@@ -98,7 +93,6 @@
           </div>
         </div>
     </footer>
-  </body>
 </html>
 
 
